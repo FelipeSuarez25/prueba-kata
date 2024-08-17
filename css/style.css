@@ -19,7 +19,8 @@ body {
 }
 /*HASH*/
 .containerHash {
-  background-color: white;
+  backdrop-filter: blur(0.2px);
+  background-color: rgba(255, 255, 255, 0.514); 
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -28,9 +29,14 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 300px;
+  max-width: 390px;
+  min-height: 200px;
   gap: 10px;
   margin: 10px;
+}
+.containerHash h2{
+  margin: 5px 0;
+  text-align: center;
 }
 #inputText,
 #generateHashButton {
@@ -38,19 +44,31 @@ body {
   width: 100%;
   font-size: 16px;
   max-width: 270px;
+  border: none;
 }
 #generateHashButton {
   background-color: #012D78;
   color: #ffffff;
   font-weight: bold;
   border-radius: 20px;
-  border: none;
+  height: 40px;
+  max-width: 200px;
+}
+#inputText{
+  border-radius: 10px;
+  max-width: 230px;
+  padding-left: 30px;
 }
 .output {
   padding: 10px;
   background-color: #e0e0e0;
   border-radius: 4px;
   word-break: break-all;
+  display: none;
+}
+.error {
+  color: red;
+  font-size: 14px;
   display: none;
 }
 /*TABS*/
@@ -77,7 +95,8 @@ body {
   display: none;
   padding: 20px;
   margin: 10px;
-  background-color: white;
+  backdrop-filter: blur(0.2px);
+  background-color: rgba(255, 255, 255, 0.514); 
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 80%;
@@ -88,5 +107,8 @@ body {
   display: block;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 320px) {
+  .containerHash{
+    max-width: 250px;
+  }
 }

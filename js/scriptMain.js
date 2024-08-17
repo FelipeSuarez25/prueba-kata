@@ -26,19 +26,26 @@ $(document).ready(function () {
     const inputText = $("#inputText").val();
     const hash = CryptoJS.MD5(inputText).toString();
 
-    // Mostrar el hash generado
-    $("#outputHash").text(`MD5 Hash: ${hash}`).show();
+    if(inputText === ''){
+      // Si el campo está vacío, muestra el mensaje de error
+      $("#errorText").show();
+    }else{
+      // Si el campo no está vacío, genera el hash y oculta el mensaje de error
+      $("#errorText").hide();
+      // Mostrar el hash generado
+      $("#outputHash").text(`MD5 Hash: ${hash}`).show();
 
-    // Capturar el primer valor numérico del rango 1 al 9
-    const firstNumber = hash.match(/[1-9]/);
-    if (firstNumber) {
-      $("#outputNumber")
-        .text(`Primer número del hash: ${firstNumber[0]}`)
-        .show();
-    } else {
-      $("#outputNumber")
-        .text("No se encontró ningún número del rango 1-9 en el hash.")
-        .show();
+      // Capturar el primer valor numérico del rango 1 al 9
+      const firstNumber = hash.match(/[1-9]/);
+      if (firstNumber) {
+        $("#outputNumber")
+          .text(`Primer número del hash: ${firstNumber[0]}`)
+          .show();
+      } else {
+        $("#outputNumber")
+          .text("No se encontró ningún número del rango 1-9 en el hash.")
+          .show();
+      }
     }
   });
 });
