@@ -4,62 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prueba desarrollo</title>
+    <!-- Incluyendo css -->
+    <link rel="stylesheet" href="/css/style.css">
     <!-- Incluyendo jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Incluyendo CryptoJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        background-color: #f0f0f0;
-      }
-      .containerHash {
-        background-color: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        max-width: 300px;
-        gap: 10px;
-      }
-      #inputText,
-      #generateHashButton {
-        padding: 10px;
-        width: 100%;
-        font-size: 16px;
-        max-width: 270px;
-      }
-
-      #generateHashButton {
-        background-color: #06a71c;
-        color: #ffffff;
-        font-weight: bold;
-        border-radius: 20px;
-        border: none;
-      }
-
-      .output {
-        padding: 10px;
-        background-color: #e0e0e0;
-        border-radius: 4px;
-        word-break: break-all;
-        display: none;
-      }
-
-      @media screen and (min-width: 768px) {
-      }
-    </style>
   </head>
   <body>
+    <div class="mainHead">
+      <h1 id="tituloTyped">PRUEBA <span class="typed" id="cursorTyped"></span></h1>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-link active" data-tab="tab1">Desafío 1</button>
+      <button class="tab-link" data-tab="tab2">Desafío 2</button>
+      <button class="tab-link" data-tab="tab3">Desafío 3</button>
+    </div>
+
     <div class="containerHash">
       <h2>Generador de MD5 Hash</h2>
       <input type="text" id="inputText" placeholder="Introduce tu texto" />
@@ -68,24 +30,20 @@
       <div id="outputNumber" class="output"></div>
     </div>
 
-    <script>
-      $(document).ready(function () {
-        $("#generateHashButton").click(function () {
-          const inputText = $("#inputText").val();
-          const hash = CryptoJS.MD5(inputText).toString();
+    <div id="tab1" class="tab-content active">
+      <h3>Contenido de la Pestaña 1</h3>
+      <p>Este es el contenido de la primera pestaña.</p>
+    </div>
+    <div id="tab2" class="tab-content">
+      <h3>Contenido de la Pestaña 2</h3>
+      <p>Este es el contenido de la segunda pestaña.</p>
+    </div>
+    <div id="tab3" class="tab-content">
+      <h3>Contenido de la Pestaña 3</h3>
+      <p>Este es el contenido de la tercera pestaña.</p>
+    </div>
 
-          // Mostrar el hash generado
-          $("#outputHash").text(`MD5 Hash: ${hash}`).show();
-
-          // Capturar el primer valor numérico del rango 1 al 9
-          const firstNumber = hash.match(/[1-9]/);
-          if (firstNumber) {
-            $("#outputNumber").text(`Primer número del hash: ${firstNumber[0]}`).show();
-          } else {
-            $("#outputNumber").text("No se encontró ningún número del rango 1-9 en el hash.").show();
-          }
-        });
-      });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="/js/scriptMain.js"></script>
   </body>
 </html>

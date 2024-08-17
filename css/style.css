@@ -1,0 +1,92 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background: url(../assets/fondo.webp), #000000;
+  background: url(../assets/fondo.webp),
+    -webkit-gradient(linear, right top, left top, from(#012D78), to(#CD3232));
+  background: url(../assets/fondo.webp), linear-gradient(to left, #012D78, #CD3232);
+  font-family: sans-serif;
+}
+.mainHead{
+  text-align: center;
+  margin: 0 15px;
+  color: #fff;
+}
+/*HASH*/
+.containerHash {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  gap: 10px;
+  margin: 10px;
+}
+#inputText,
+#generateHashButton {
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  max-width: 270px;
+}
+#generateHashButton {
+  background-color: #012D78;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 20px;
+  border: none;
+}
+.output {
+  padding: 10px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  word-break: break-all;
+  display: none;
+}
+/*TABS*/
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.tabs button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #ddd;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 5px;
+  border-radius: 4px;
+}
+.tabs button.active {
+  background-color: #012D78;
+  color: white;
+  font-weight: bold;
+}
+.tab-content {
+  display: none;
+  padding: 20px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 800px;
+  text-align: center;
+}
+.tab-content.active {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+}
