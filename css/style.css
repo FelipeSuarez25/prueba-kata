@@ -107,6 +107,12 @@ body {
   display: block;
 }
 
+@media screen and (max-width: 720px) {
+  .containerHash{
+    max-width: 300px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .containerHash{
     max-width: 250px;
