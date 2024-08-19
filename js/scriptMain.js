@@ -26,9 +26,15 @@ $(document).ready(function () {
     const inputText = $("#inputText").val();
     const hash = CryptoJS.MD5(inputText).toString();
 
+    // Validación para asegurarse de que solo contiene letras (y espacios)
+    const inputTextValidate = /^[a-zA-Z\s]+$/;
+
     if(inputText === ''){
       // Si el campo está vacío, muestra el mensaje de error
-      $("#errorText").show();
+      $("#errorText").text("Entrada inválida. Por favor, ingrese solo texto").show();
+    }else if (!inputTextValidate.test(inputText)) {
+      // Si contiene números o caracteres especiales, muestra un mensaje de error
+      $("#errorText").text("El texto no debe contener números ni caracteres especiales.").show();
     }else{
       // Si el campo no está vacío, genera el hash y oculta el mensaje de error
       $("#errorText").hide();
@@ -52,8 +58,8 @@ $(document).ready(function () {
 
 const typed = new Typed('.typed', {
   strings: ['DESARROLLO KATA'],
-  typeSpeed: 200,
-  backSpeed: 100,
+  typeSpeed: 300,
+  backSpeed: 150,
   loop: true,
   showCursor: true,
   cursorChar: '|'

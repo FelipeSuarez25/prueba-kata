@@ -24,9 +24,9 @@
     </div>
 
     <div class="containerHash">
-      <h2>Generador de MD5 Hash</h2>
-      <input type="text" id="inputText" placeholder="Introduce tu nombre" required/>
-      <button id="generateHashButton">Generar MD5</button>
+      <h2 class="titleSub">Generador de MD5 Hash</h2>
+      <input type="text" id="inputText" class="inputEdit" placeholder="Introduce tu nombre" required/>
+      <button id="generateHashButton" class="btnBlue">Generar MD5</button>
       <div class="error" id="errorText">Por favor, introduce un nombre o texto.</div>
       <div id="outputHash" class="output"></div>
       <div id="outputNumber" class="output"></div>
@@ -41,11 +41,18 @@
       <p>Este es el contenido de la segunda pestaña.</p>
     </div>
     <div id="tab3" class="tab-content">
-      <h3>Contenido de la Pestaña 3</h3>
-      <p>Este es el contenido de la tercera pestaña.</p>
+      <h3>MONEDAS</h3>
+      <div id="calculator">
+        <h2 class="titleSub">Calculadora de cambio</h2>
+        <input type="text" id="coinInput" class="inputEdit" placeholder="Ingrese los # separadas por comas, ej: 1,2,4,9">
+        <button id="calculateBtn" class="btnBlue">Calcular</button>
+        <div class="error" id="errorTextCoin">Por favor, introduce un los numeros.</div>
+        <div id="outputCoin" class="outputCambio"></div>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="js/scriptMain.js"></script>
+    <script src="js/scriptThree.js"></script>
   </body>
 </html>

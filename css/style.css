@@ -8,19 +8,21 @@ body {
   background-position: center;
   background: url(../assets/fondo.webp), #000000;
   background: url(../assets/fondo.webp),
-    -webkit-gradient(linear, right top, left top, from(#012D78), to(#CD3232));
-  background: url(../assets/fondo.webp), linear-gradient(to left, #012D78, #CD3232);
+    -webkit-gradient(linear, right top, left top, from(#012d78), to(#cd3232));
+  background: url(../assets/fondo.webp),
+    linear-gradient(to left, #012d78, #cd3232);
   font-family: sans-serif;
 }
-.mainHead{
+.mainHead {
   text-align: center;
   margin: 0 15px;
   color: #fff;
 }
 /*HASH*/
-.containerHash {
+.containerHash,
+#calculator {
   backdrop-filter: blur(0.2px);
-  background-color: rgba(255, 255, 255, 0.514); 
+  background-color: rgba(255, 255, 255, 0.514);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -34,27 +36,33 @@ body {
   gap: 10px;
   margin: 10px;
 }
-.containerHash h2{
+.titleSub {
   margin: 5px 0;
   text-align: center;
+  font-weight: 400;
 }
-#inputText,
-#generateHashButton {
+.inputEdit,
+.btnBlue {
   padding: 10px;
   width: 100%;
   font-size: 16px;
   max-width: 270px;
   border: none;
 }
-#generateHashButton {
-  background-color: #012D78;
+.btnBlue {
+  background-color: #012d78;
   color: #ffffff;
   font-weight: bold;
   border-radius: 20px;
   height: 40px;
   max-width: 200px;
+  border: none;
+  cursor: pointer;
 }
-#inputText{
+.btnBlue:hover{
+  background-color: #001d50;
+}
+.inputEdit {
   border-radius: 10px;
   max-width: 230px;
   padding-left: 30px;
@@ -71,6 +79,26 @@ body {
   font-size: 14px;
   display: none;
 }
+
+h3{
+  text-transform: uppercase;
+  font-size: 26px;
+  transition: .3s linear;
+  color: transparent;
+  font-weight: bold;
+  -webkit-text-stroke: 0.5px #ffffff;
+  background-image: linear-gradient(to left,
+  #cd3232,#012d78, #000000,rgb(0, 0, 0));
+  -webkit-background-clip: text;
+  animation: move 30s linear infinite;
+}
+
+@keyframes move{
+  100%{
+    background-position: 1500px 0;
+  }
+}
+
 /*TABS*/
 .tabs {
   display: flex;
@@ -87,7 +115,7 @@ body {
   border-radius: 4px;
 }
 .tabs button.active {
-  background-color: #012D78;
+  background-color: #012d78;
   color: white;
   font-weight: bold;
 }
@@ -96,25 +124,67 @@ body {
   padding: 20px;
   margin: 10px;
   backdrop-filter: blur(0.2px);
-  background-color: rgba(255, 255, 255, 0.514); 
+  background-color: rgba(255, 255, 255, 0.514);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 80%;
-  max-width: 800px;
+  max-width: 600px;
   text-align: center;
 }
 .tab-content.active {
   display: block;
 }
 
+/*TAB 3 Moneda cambio*/
+#calculator {
+  max-width: 400px;
+  margin: 0 auto;
+  backdrop-filter: blur(0.1px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.outputCambio {
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 15px;
+}
+.success {
+  background-color: #d4edda;
+  color: #155724;
+  font-weight: bold;
+}
+.errorCambio {
+  color: red;
+  font-size: 15px;
+}
+#calculator .inputEdit {
+  border-radius: 10px;
+  max-width: 310px;
+  padding-left: 10px;
+}
+
 @media screen and (max-width: 720px) {
-  .containerHash{
+  .containerHash {
     max-width: 300px;
+  }
+  #calculator {
+    max-width: 80%;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .containerHash{
+  .containerHash {
     max-width: 250px;
+  }
+  #calculator {
+    max-width: 82%;
+  }
+  #calculator .inputEdit {
+    border-radius: 10px;
+    max-width: 200px;
+    padding-left: 10px;
+  }
+  .tabs{
+    flex-direction: column;
+    gap: 10px;
   }
 }
