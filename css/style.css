@@ -135,6 +135,12 @@ h3{
   display: block;
 }
 
+#tab1 .output,
+#tab2 .output{
+  max-width: 300px;
+  margin: 10px auto;
+}
+
 /*TAB 3 Moneda cambio*/
 #calculator {
   max-width: 400px;
